@@ -1,0 +1,572 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/styles.css">
+    <link rel="stylesheet" href="styles.css">
+  
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <title>Document</title>
+  
+    <style>
+        body {
+    background-image: url('../public/img/bg-tablet-pattern.svg');
+    background-repeat: no-repeat;
+    background-size: 800px;
+    background-position: 90% -25%;
+  }
+  
+  #cta {
+    background-image: url('/public/img/bg-simplify-section-desktop.svg');
+    background-repeat: no-repeat;
+  }
+  
+  @media (max-width: 576px) {
+    body {
+      background-position: 50px -50px;
+      background-size: 500px;
+    }
+  
+    #cta {
+      background-image: url('../public/img/bg-simplify-section-mobile.svg');
+    }
+  }
+  
+  /* Hamburger Menu */
+  .hamburger {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    transition: all 0.25s;
+    position: relative;
+  }
+  
+  .hamburger-top,
+  .hamburger-middle,
+  .hamburger-bottom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background: #000;
+    transform: rotate(0);
+    transition: all 0.5s;
+  }
+  
+  .hamburger-middle {
+    transform: translateY(7px);
+  }
+  
+  .hamburger-bottom {
+    transform: translateY(14px);
+  }
+  
+  .open {
+    transform: rotate(90deg);
+    transform: translateY(0px);
+  }
+  
+  .open .hamburger-top {
+    transform: rotate(45deg) translateY(6px) translate(6px);
+  }
+  
+  .open .hamburger-middle {
+    display: none;
+  }
+  
+  .open .hamburger-bottom {
+    transform: rotate(-45deg) translateY(6px) translate(-6px);
+  }
+  .menu-btn{
+    height:200px;
+    width:200px;
+  }
+
+    </style>
+</head>
+<body>
+    <nav class="relative container mx-auto p-6">
+        <!-- Flex container -->
+        <div class="flex items-center justify-between">
+          <!-- Logo -->
+          <div class="pt-2">
+            <svg aria-hidden="true" class="swoosh-svg" focusable="false" viewBox="0 0 24 24" role="img" width="80px" height="90px" fill="none"><path fill="currentColor" fill-rule="evenodd" d="M21 8.719L7.836 14.303C6.74 14.768 5.818 15 5.075 15c-.836 0-1.445-.295-1.819-.884-.485-.76-.273-1.982.559-3.272.494-.754 1.122-1.446 1.734-2.108-.144.234-1.415 2.349-.025 3.345.275.2.666.298 1.147.298.386 0 .829-.063 1.316-.19L21 8.719z" clip-rule="evenodd"></path></svg>
+          </div>
+          <!-- Menu Items -->
+          <div class="hidden space-x-6 md:flex">
+            <a href="#" class="hover:text-green-700">Pricing</a>
+            <a href="#" class="hover:text-green-700">Product</a>
+            <a href="#" class="hover:text-green-700">About Us</a>
+            <a href="#" class="hover:text-green-700">Careers</a>
+            <a href="#" class="hover:text-green-700">Community</a>
+            
+              <a class="md:block"><img class="moon cursor-pointer w-150 h-90" src="moon.svg"></a>
+            
+          </div>
+          <!-- Button -->
+          <a
+            href="#"
+            class="hidden md:block p-3 px-6 pt-2 text-black	 bg-teal-400 rounded-full baseline hover:bg-green-700 md:block"
+            >Get Started</a
+          >
+           <!-- Hamburger Icon -->
+        <button
+        id="menu-btn"
+        class=" block hamburger md focus:outline-none md:hidden "
+      >
+        <span class="hamburger-top"></span>
+        <span class="hamburger-middle"></span>
+        <span class="hamburger-bottom"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="md:hidden ">
+      <div
+        id="menu"
+        class="absolute flex-col items-center hidden self-end py-8 mt-10 space-y-6 font-bold bg-green-700 sm:w-auto sm:self-center left-6 right-6 drop-shadow-md w-100 z-100"
+      >
+        <a href="#">Pricing</a>
+        <a href="#">Product</a>
+        <a href="#">About Us</a>
+      
+       
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" >
+    <!-- Flex Container -->
+    <div class="grid grid-cols-1 md:grid-cols-2 z-10">
+      <div class=" px-10 pt-28 texts space-y-3 md:space-y-5 z-10">
+        <div class="text-lg text-red-400 z1">Our Summer collections</div>
+        <div class="text-5xl lg:text-8xl font-bold lg:w-[750px] py-5 bg-white z2">The New Arrival</div>
+        <div class="text-5xl z3 lg:text-8xl font-bold">
+          <span class="text-red-400">Nike</span> Shoes
+        </div>
+        <div class="text-gray-400 text-lg w-4/6 z4">
+          Discover stylish Nike arrivals, quality comfort, and innovation for your active life.
+        </div>
+        <button class="flex justify-between items-center bg-red-400 p-3 px-5 rounded-full text-white">
+          Shop now
+          <img src="assets/icons/arrow-right.svg" class="mt-1 mx-2">
+        </button>
+    
+        <ul class="flex space-x-10 py-5">
+    
+          <div>
+            <div class="text-3xl font-bold">1k+</div>
+            <div class="text-gray-400 text-lg">Brands</div>
+          </div>
+    
+          <div>
+            <div class="text-3xl font-bold">500+</div>
+            <div class="text-gray-400 text-lg">Shops</div>
+          </div>
+    
+          <div>
+            <div class="text-3xl font-bold">250k+</div>
+            <div class="text-gray-400 text-lg">Customers</div>
+          </div>
+        </ul>
+      </div>
+      <div class=" px-10 pt-28 bg-[url('assets/images/collection-background.svg')] bg-center bg-no-repeat">
+        <img src="assets/images/big-shoe1.png" alt="">
+    
+    
+        <div class="flex relative top-10">
+    
+          <div class=" p-5 bg-[url('assets/images/thumbnail-background.svg')] bg-center bg-contain bg-no-repeat">
+            <img src="assets/images/thumbnail-shoe1.svg" alt="">
+          </div>
+    
+          <div class=" p-5 bg-[url('assets/images/thumbnail-background.svg')] bg-center bg-contain bg-no-repeat">
+            <img src="assets/images/thumbnail-shoe2.svg" alt="">
+          </div>
+    
+          <div class=" p-5 bg-[url('assets/images/thumbnail-background.svg')] bg-center bg-contain bg-no-repeat">
+            <img src="assets/images/thumbnail-shoe3.svg" alt="">
+          </div>
+    
+        </div>
+      </div>
+    </div>
+      <!-- Image -->
+     
+  </section>
+<!--space-y makes the spacing of each element with repect to the other elements in the parent container w-3/6 makes the width 50% to make it easier for user to read-->
+  <section class="p-10 py-32  space-y-5">
+    <div class="text-3xl md:text-5xl font-bold">Our <span class="text-red-400">
+        Popular
+      </span> Products</div>
+    <div class="text-gray-400 text-xl md:w-3/6">
+      Experience top-notch quality and style with our sought-after selections. Discover a world of comfort, design, and
+      value
+    </div>
+  
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 space-x-5 space-y-10 py-10 md:py-0">
+      <div class="cart space-y-2 flex flex-col">
+        <img src="assets/images/shoe5.svg" alt="">
+        <div class="flex">
+          <img src="assets/icons/star.svg" alt="">
+          <div class="text-lg text-gray-400">(4.5)</div>
+        </div>
+        <div class="text-2xl font-semibold">Nike Air Jordan-10</div>
+        <div class="text-2xl font-semibold text-red-400">$210.20</div>
+      </div>
+  
+      <div class="cart space-y-2 flex flex-col">
+        <img src="assets/images/shoe6.svg" alt="">
+        <div class="flex">
+          <img src="assets/icons/star.svg" alt="">
+          <div class="text-lg text-gray-400">(4.5)</div>
+        </div>
+        <div class="text-2xl font-semibold">Nike Air Jordan-100</div>
+        <div class="text-2xl font-semibold text-red-400">$220.20</div>
+      </div>
+  
+      <div class="cart space-y-2 flex flex-col">
+        <img src="assets/images/shoe7.svg" alt="">
+        <div class="flex">
+          <img src="assets/icons/star.svg" alt="">
+          <div class="text-lg text-gray-400">(4.5)</div>
+        </div>
+        <div class="text-2xl font-semibold">Nike Air Jordan-001</div>
+        <div class="text-2xl font-semibold text-red-400">$230.20</div>
+      </div>
+  
+      <div class="cart space-y-2 flex flex-col">
+        <img src="assets/images/shoe4.svg" alt="">
+        <div class="flex">
+          <img src="assets/icons/star.svg" alt="">
+          <div class="text-lg text-gray-400">(4.5)</div>
+        </div>
+        <div class="text-2xl font-semibold">Nike Air Jordan-001</div>
+        <div class="text-2xl font-semibold text-red-400">$240.20</div>
+      </div>
+  
+  
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="p-10 py-20  grid grid-cols-1 lg:grid-cols-2">
+    <div class="space-y-5 p-10 flex flex-col justify-center items-center">
+      <div class="text-3xl lg:text-5xl font-bold">
+        We Provide You Super Quality Shoes
+      </div>
+      <div class="text-gray-400 text-lg">
+        Ensuring premium comfort and style, our meticulously crafted footwear is designed to elevate your experience,
+        providing
+        you with unmatched quality, innovation, and a touch of elegance.
+      </div>
+      <div class="text-gray-400 text-lg">
+        Our dedication to detail and excellence ensures your satisfaction
+      </div>
+  
+    </div>
+  
+    <div class="p-10 flex justify-center items-center">
+      <img src="assets/images/shoe8.svg" alt="">
+    </div>
+  </section>
+  <!-- CTA Section -->
+  <section class="lg:p-32 text-center space-y-5">
+    <div class="text-3xl font-bold">
+      What Our Customers Say?
+    </div>
+    <div class="text-lg text-gray-400 md:w-2/5 m-auto">
+      Hear genuine stories from our satisfied customers about their exceptional experiences with us.
+    </div>
+  
+  
+    <div class="grid grid-cols-1 md:grid-cols-2 space-y-10">
+  
+      <div class="px-20 flex flex-col justify-center items-center space-y-5">
+        <img src="assets/images/customer1.jpg" class="h-32 rounded-full">
+        <div class="text-lg text-gray-400">
+          The attention to detail and the quality of the product exceeded my expectations. Highly recommended!
+        </div>
+        <div class="flex">
+          <img src="assets/icons/star.svg" alt="">
+          <div class="text-lg text-gray-400">
+            (4.5)
+          </div>
+        </div>
+        <div class="text-3xl font-semibold">
+          Morich Brown
+        </div>
+      </div>
+  
+  
+  
+      <div class="px-20 flex flex-col justify-center items-center space-y-5">
+        <img src="assets/images/customer11.jpeg" class="h-32 rounded-full">
+        <div class="text-lg text-gray-400">
+          The attention to detail and the quality of the product exceeded my expectations. Highly recommended!
+        </div>
+        <div class="flex">
+          <img src="assets/icons/star.svg" alt="">
+          <div class="text-lg text-gray-400">
+            (4.5)
+          </div>
+        </div>
+        <div class="text-3xl font-semibold">
+          Morich Brown
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  <!-- section 5 -->
+  <section id="cr7" class="mt-20" >
+    <strong class="text-xl flex justify-center">Meet our Athletes</strong>
+    <strong class=" md:text-7xl flex justify-center lol">Cristiano Ronaldo</strong>
+    <div class="md:flex how">
+    <p class="ml-4 w-3/6 leading-normal mt-12 text-2xl wow">
+      From his first deal at Sporting Lisbon to a $1 BILLION lifetime contract.Cristiano Ronaldo has been the poster boy since signing his first deal  way back in 2003.
+      In the 15 years that have followed he has worn more than 70 different boots adorned with the brand's iconic swoosh en route to becoming one of the best football players in the history of the game.
+      
+     
+    </p>
+    
+    <div class="flex">
+    <img src="cr7.jpg" class="lolo md:rounded-lg  ml-60 mt-7">
+ 
+    <style>
+      @media(max-width:768px){
+      .lol{
+        font-size:40px;
+      }
+      #hero{
+        padding-top: 15px;;
+      }
+      
+      .lolo{
+        margin:auto;
+      }
+      .wow{
+        width:85%;
+        line-height:1.2;
+      }
+      .menu{
+        z-index: 10000;
+      }
+
+    }
+    .heros{
+      padding-top: 250px;
+    }
+      @media(max-width:1024px){
+       .how{
+        
+        display:flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+      }
+      .wow{
+        width:85%;
+      }
+
+       }
+      
+      
+      .wow::first-letter{
+       font-size:50px;
+       font-weight:900;
+
+      }
+      .wow{
+        font-size:30px;
+      }
+      .heros{
+        padding-top: 200px;
+      }
+      .lolo{
+        width:400px;
+        height:400px;
+      }
+      .liga{
+        width: 288px;
+        height:288px;
+      }
+      .uefa{
+        width:288px;
+        height:288px;
+      }
+      .moon{
+        height:20px;
+        width:57px;
+      }
+    </style>
+    </div>
+    </div>
+    <div class="flex flex-wrap justify-center mt-10">
+
+      <!-- card 1 -->
+      <div class="p-4 max-w-sm">
+          <div class="flex rounded-lg h-full bg-white dark:bg-white text-black p-8 flex-col shadow-2xl hover:scale-105 hover:shadow-lg transition-all duration-1000">
+              <div class="flex items-center mb-3">
+                  
+                     <img src="uefa.svg" class="w-100 h-100 uefa ">
+                 
+                 
+              </div>
+              <div class="flex flex-col justify-between flex-grow">
+                  <p class="leading-relaxed text-base text-black dark:text-black">
+                      Ronaldo won 5 Champions League, One with Man United in 2008, 4 with Real Madrid in 2014,2016,2017,and 2018
+                  </p>
+                  
+              </div>
+          </div>
+      </div>
+  
+      <!-- card 2 -->
+      <div class="p-1 max-w-sm">
+        <div class="flex rounded-lg h-full bg-white dark:bg-white text-black p-8 flex-col hover:scale-105 hover:shadow-lg shadow-2xl transition-all duration-1000">
+            <div class="flex items-center mb-3" class="w-288 h-288 ">
+                
+                   <img src="cup.svg" class="uefa" >
+               
+               
+            </div>
+            <div class="flex flex-col justify-between flex-grow">
+                <p class="leading-relaxed text-base text-black dark:text-black">
+                    Ronaldo won 4 FIFA World Club Cup titles, One with Man United in 2009, 3 with Real Madrid in 2015,2017,2018
+                </p>
+                
+            </div>
+        </div>
+    </div>
+  
+      <!-- card 3 -->
+      <div class="p-1 max-w-sm ">
+        <div class="flex rounded-lg h-full bg-white dark:bg-white text-black p-8 flex-col hover:scale-105 hover:shadow-lg shadow-2xl transition-all duration-1000">
+            <div class="flex items-center mb-3 ">
+                
+                   <img src="liga1.svg"  class="liga">
+               
+               
+            </div>
+            <div class="flex flex-col justify-between flex-grow">
+                <p class="leading-relaxed text-base text-black dark:text-black">
+                    Ronaldo won 2 LaLiga titles with Real Madrid in 11/12 and 16/17
+                </p>
+                
+            </div>
+        </div>
+    </div>
+  
+  </div>
+  </section>
+  
+  
+  <!-- section 6 -->
+  <section class=" p-5 md:p-10 py-20 grid grid-cols-1 md:grid-cols-2">
+    <div>
+      <div class="text-3xl lg:text-5xl font-bold lg:pr-10">
+        Sign Up for Updates & Newsletter
+      </div>
+      
+    </div>
+  
+    <div class="lg:px-10 py-10 md:py-0 flex justify-center items-center">
+      <input type="text" placeholder="subscribe@nike.com" class="ring-1 p-3 px-4 w-80 ml-8 rounded-full">
+      <button class="rounded-lg mx-12 bg-green-700 px-8 py-3 hover:bg-red-400 focus:outline-none focus:ring-blue-300">Go</button>
+      
+       
+      </button>
+    </div>
+  
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-green-700">
+    <!-- Flex Container -->
+    <div
+      class="container1 flex flex-col-reverse justify-between px-6 py-10 mx-auto space-y-8 md:flex-row md:space-y-0"
+    >
+      <!-- Logo and social links container -->
+      <div
+        class="flex flex-col-reverse items-center justify-between space-y-12 md:flex-col md:space-y-0 md:items-start"
+      >
+        <div class="mx-auto my-6 text-center text-white md:hidden">
+          Copyright &copy; 2022, All Rights Reserved
+        </div>
+        <!-- Logo -->
+        <div>
+          <svg aria-hidden="true" class="swoosh-svg mt-0" focusable="false" viewBox="0 0 24 24" role="img" width="150px" height="150px" fill="none"><path fill="currentColor" fill-rule="evenodd" d="M21 8.719L7.836 14.303C6.74 14.768 5.818 15 5.075 15c-.836 0-1.445-.295-1.819-.884-.485-.76-.273-1.982.559-3.272.494-.754 1.122-1.446 1.734-2.108-.144.234-1.415 2.349-.025 3.345.275.2.666.298 1.147.298.386 0 .829-.063 1.316-.19L21 8.719z" clip-rule="evenodd"></path></svg>
+        </div>
+        
+        <!-- Social Links Container -->
+        <div class="flex justify-center space-x-4">
+          <!-- Link 1 -->
+          <a href="#">
+            <img src="img/icon-facebook.svg" alt="" class="h-8" />
+          </a>
+          <!-- Link 2 -->
+          <a href="#">
+            <img src="img/icon-youtube.svg" alt="" class="h-8" />
+          </a>
+          <!-- Link 3 -->
+          <a href="#">
+            <img src="img/icon-twitter.svg" alt="" class="h-8" />
+          </a>
+          <!-- Link 4 -->
+          <a href="#">
+            <img src="img/icon-pinterest.svg" alt="" class="h-8" />
+          </a>
+          <!-- Link 5 -->
+          <a href="#">
+            <img src="img/icon-instagram.svg" alt="" class="h-8" />
+          </a>
+        </div>
+      </div>
+      <!-- List Container -->
+      <div class="flex justify-around space-x-32">
+        <div class="flex flex-col space-y-3 text-white">
+          <a href="#" class="hover:text-brightRed">Home</a>
+          <a href="#" class="hover:text-brightRed">Pricing</a>
+          <a href="#" class="hover:text-brightRed">Products</a>
+          <a href="#" class="hover:text-brightRed">About</a>
+        </div>
+        <div class="flex flex-col space-y-3 text-white">
+          <a href="#" class="hover:text-brightRed">Careers</a>
+          <a href="#" class="hover:text-brightRed">Community</a>
+          <a href="#" class="hover:text-brightRed">Privacy Policy</a>
+        </div>
+      </div>
+
+      <!-- Input Container -->
+      <div class="flex flex-col justify-between">
+        <form>
+          <div class="flex space-x-3">
+            <input
+              type="text"
+              class="flex-1 px-4 rounded-full focus:outline-none"
+              placeholder="Updated in your inbox"
+            />
+            <button
+              class="px-6 py-2 text-white rounded-full bg-brightRed hover:bg-brightRedLight focus:outline-none"
+            >
+              Go
+            </button>
+          </div>
+        </form>
+        <div class="hidden text-white md:block">
+          Copyright &copy; 2022, All Rights Reserved
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+</body>
+</html>
